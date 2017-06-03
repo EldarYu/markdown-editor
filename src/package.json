@@ -1,0 +1,14 @@
+{
+  "name": "markdown-editor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Yu Jiang",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^1.6.10"
+  }
+}

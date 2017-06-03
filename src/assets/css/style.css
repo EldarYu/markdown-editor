@@ -1,0 +1,57 @@
+html, body, section, .full-height {
+    height: 100%;
+}
+
+body{
+    overflow: hidden;
+    border-radius: 25px;
+    border: 2px solid white;
+}
+
+#parent{
+    padding: 5px;
+}
+#preview{
+    overflow: hidden;
+    background-color: #f6f6f6;
+}
+
+#source{
+    border: none;
+    border-right: 1px solid #ccc;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+#top-bar>a{
+    border: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 100%;
+    cursor:pointer;
+}
+
+#top-bar>a:hover{
+   background: #fcfcfc;
+   border-color: #95a5a6;
+}
+
+#top-bar{
+    background-color: black;
+    padding-left: 10px;
+    height: 30px;
+    border-bottom: 1px solid #ccc;
+}
+
+::-webkit-scrollbar {
+    width: 1em;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
