@@ -1,5 +1,5 @@
-const { app, BrowserWindow, Menu, electron, global } = require('electron')
-const dialog = require('electron').dialog;
+const { app, BrowserWindow, Menu, electron, dialog, ipcMain } = require('electron')
+
 
 let mainWindow;
 let template = [{
@@ -25,7 +25,7 @@ let template = [{
     { label: "Select All", accelerator: "CmdOrCtrl+A", selector: "selectAll:", click: () => { mainWindow.webContents.selectAll(); } }
   ]
 }, {
-  label: "About",
+  label: "Help",
   submenu: [
     { label: "About", click: () => { mainWindow.webContents.send("about"); } }
   ]
@@ -35,18 +35,20 @@ let template = [{
 function createWindow() {
 
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1440,
+    height: 900,
     title: 'Editor',
+    minWidth: 1440,
+    minHeight: 900,
     //  transparent: true,  //透明
     // "frame": false,   //窗口标题栏
     show: false,
-  })
+  });
 
-  mainWindow.loadURL(`file://${__dirname}/views/index.html`)
+  mainWindow.loadURL(`file://${__dirname}/views/index.html`);
 
   //打开开发者工具，方便调试
-  mainWindow.webContents.openDevTools();
+  //mainWindow.webContents.openDevTools();
 
   mainWindow.on('ready-to-show', () => {
     mainWindow.show();
@@ -55,7 +57,7 @@ function createWindow() {
 
   // 处理窗口关闭
   mainWindow.on('closed', () => {
-    mainWindow = null
+    mainWindow = null;
   })
 }
 
@@ -70,12 +72,16 @@ app.on('ready', () => {
 // 处理退出
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
-    app.quit()
+    app.quit();
   }
 })
 
 app.on('activate', () => {
   if (mainWindow === null) {
-    createWindow()
+    createWindow();
   }
+})
+
+ipcMain.on('reload', (event) => {
+  mainWindow.webContents.reload();
 })

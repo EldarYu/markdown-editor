@@ -4,15 +4,14 @@ html, body, section, .full-height {
 
 body{
     overflow: hidden;
-    border-radius: 25px;
-    border: 2px solid white;
 }
 
-#parent{
-    padding: 5px;
+img{
+    width: 100%;
 }
+
 #preview{
-    overflow: hidden;
+    overflow-y: auto;
     background-color: #f6f6f6;
 }
 
@@ -23,35 +22,20 @@ body{
     padding-left: 0px;
 }
 
-#top-bar>a{
-    border: none;
-    padding-left: 5px;
-    padding-right: 5px;
-    height: 100%;
-    cursor:pointer;
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
 }
 
-#top-bar>a:hover{
-   background: #fcfcfc;
-   border-color: #95a5a6;
+::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
 }
 
-#top-bar{
-    background-color: black;
-    padding-left: 10px;
-    height: 30px;
-    border-bottom: 1px solid #ccc;
-}
-
-::-webkit-scrollbar {
-    width: 1em;
-}
- 
-::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-}
- 
-::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
+::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+	border: 2px solid #555555;
 }

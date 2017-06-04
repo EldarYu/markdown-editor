@@ -9,13 +9,38 @@
 </head>
 
 <body class="full-height">
+    <div class="container">
+        <div class="modal fade" id="about" role="dialog">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">About</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>This is a simple editor , if you have any problem , check out this link
+                            <a id="github-link" href="#">GitHub</a></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <section class="row">
         <div class="col-md-6 full-height" id="source"></div>
         <div class="col-md-6 full-height" id="preview"></div>
     </section>
+
+    <script>
+        window.jQuery = window.$ = require('../assets/js/jquery-3.2.1.min.js');
+    </script>
+
     <script src="../assets/lib/marked/marked.min.js"></script>
     <script src="../assets/lib/codemirror-5.26.0/codemirror.js"></script>
     <script src="../assets/lib/codemirror-5.26.0/markdown.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
     <script src="../assets/js/app.js"></script>
 </body>
 
