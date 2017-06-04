@@ -35,11 +35,11 @@ let template = [{
 function createWindow() {
 
   mainWindow = new BrowserWindow({
-    width: 1440,
-    height: 900,
+    width: 1280,
+    height: 600,
     title: 'Editor',
-    minWidth: 1440,
-    minHeight: 900,
+    minWidth: 1280,
+    minHeight: 600,
     //  transparent: true,  //透明
     // "frame": false,   //窗口标题栏
     show: false,
